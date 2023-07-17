@@ -24,3 +24,19 @@ There are a few files in utils:
 - The `example.js` script shows how we can generate a root, generate a proof and verify that some value is in the root using the proof. Try it out from the top-level folder with `node/example.js`
 - The `MerkleTree.js` should look familiar from the Merkle Tree module! This one has been modified so you should not have to deal with any crypto type conversion. You can import this in your client/server
 - The `verifyProof.js` should also look familiar. This was the last stage in the module. You can use this function to prove a name is in the merkle root, as show in the example.
+
+
+##Project specifications
+Your project this week is to build an application which gives out gifts, but only to names on the list. The catch is that on the server you are only allowed to store one 32 byte value in the server memory. This 32 byte value has to be enough for the server to be able to determine who is on the list.
+
+Here is your starter repository: https://github.com/ChainShot/GiftList
+
+To get started, read the readme for further instruction!
+
+ Hints
+
+Think of the client as the prover here. They are the ones trying to prove to the server that the one name is in the list. Likewise think of the server as the verifier here. They are taking the client's proof and, using minimal information, able to verify that the name sent from the client is actually in the list.
+
+Check out the /utils folder for everything you need for the Merkle Tree. Take a look at the example.js file to see how to create a root, create a proof, and verify that proof.
+
+We modified the MerkleTree implementation so you won't have to! You can see we used a few helpers from the ethereum-cryptography library to convert between types.
